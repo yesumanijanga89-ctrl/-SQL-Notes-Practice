@@ -1,0 +1,79 @@
+📁 01_DDL/create.sql
+
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(30),
+    Salary DECIMAL(10,2)
+);
+
+📁 01_DDL/alter.sql
+ALTER TABLE Employee
+ADD Email VARCHAR(100);
+
+📁 01_DDL/drop.sql
+DROP TABLE Employee;
+
+📁 02_DML/insert.sql
+INSERT INTO Employee
+VALUES (101,'Ravi','HR',35000);
+
+📁 02_DML/update.sql
+UPDATE Employee
+SET Salary=40000
+WHERE EmpID=101;
+
+📁 02_DML/delete.sql
+DELETE FROM Employee
+WHERE EmpID=101;
+
+📁 03_DQL/select.sql
+SELECT * FROM Employee;
+
+📁 03_DQL/where.sql
+SELECT * FROM Employee
+WHERE Salary>30000;
+
+📁 03_DQL/order_by.sql
+SELECT * FROM Employee
+ORDER BY Salary DESC;
+
+📁 04_Joins/inner_join.sql
+SELECT e.Name,d.DepartmentName
+FROM Employee e
+INNER JOIN Department d
+ON e.Department=d.DepartmentID;
+
+📁 05_Advanced_SQL/subquery.sql
+SELECT Name
+FROM Employee
+WHERE Salary>(
+SELECT AVG(Salary)
+FROM Employee);
+
+📁 Interview_Questions.md
+
+# SQL Interview Questions
+
+### 1. What is SQL?
+SQL is a language used to manage relational databases.
+
+### 2. Difference between DELETE, DROP and TRUNCATE?
+
+DELETE - Removes selected rows.
+
+TRUNCATE - Removes all rows.
+
+DROP - Deletes the entire table.
+
+### 3. What is Primary Key?
+
+A Primary Key uniquely identifies each record in a table.
+
+### 4. What is Foreign Key?
+
+A Foreign Key links two tables.
+
+### 5. What is JOIN?
+
+JOIN is used to combine data from two or more tables.
